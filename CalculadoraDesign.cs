@@ -30,123 +30,87 @@ namespace Calculadora_Heuristicas
             switch (e.KeyChar)
             {
                 case '0':
-                    btnNum0.Focus();
-                    btnNum0.PerformClick();
+                    btnActions(btnNum0);
                     break;
 
                 case '1':
-                    btnNum1.Focus();
-                    btnNum1.PerformClick();
+                    btnActions(btnNum1);
                     break;
 
                 case '2':
-                    btnNum2.Focus();
-                    btnNum2.PerformClick();
+                    btnActions(btnNum2);
                     break;
 
                 case '3':
-                    btnNum3.Focus();
-                    btnNum3.PerformClick();
+                    btnActions(btnNum3);
                     break;
 
                 case '4':
-                    btnNum4.Focus();
-                    btnNum4.PerformClick();
+                    btnActions(btnNum4);
                     break;
 
                 case '5':
-                    btnNum5.Focus();
-                    btnNum5.PerformClick();
+                    btnActions(btnNum5);
                     break;
 
                 case '6':
-                    btnNum6.Focus();
-                    btnNum6.PerformClick();
+                    btnActions(btnNum6);
                     break;
 
                 case '7':
-                    btnNum7.Focus();
-                    btnNum7.PerformClick();
+                    btnActions(btnNum7);
                     break;
 
                 case '8':
-                    btnNum8.Focus();
-                    btnNum8.PerformClick();
+                    btnActions(btnNum8);
                     break;
 
                 case '9':
-                    btnNum9.Focus();
-                    btnNum9.PerformClick();
+                    btnActions(btnNum9);
                     break;
 
                 case '.':
-                    btnSignoPunto.Focus();
-                    btnSignoPunto.PerformClick();
+                    btnActions(btnSignoPunto);
                     break;
 
                 case '+':
-                    btnSignoSumar.Focus();
-                    btnSignoSumar.PerformClick();
+                    btnActions(btnSignoSumar);
                     break;
 
                 case '-':
-                    btnSignoMenos.Focus();
-                    btnSignoMenos.PerformClick();
+                    btnActions(btnSignoMenos);
                     break;
 
                 case '*':
-                    btnSignoPor.Focus();
-                    btnSignoPor.PerformClick();
+                    btnActions(btnSignoPor);
                     break;
 
                 case '/':
-                    btnSignoDividir.Focus();
-                    btnSignoDividir.PerformClick();
+                    btnActions(btnSignoDividir);
                     break;
 
                 case 'r':
-                    btnSignoRaiz.Focus();
-                    btnSignoRaiz.PerformClick();
-                    break;
-
                 case 'R':
-                    btnSignoRaiz.Focus();
-                    btnSignoRaiz.PerformClick();
+                    btnActions(btnSignoRaiz);
                     break;
 
                 case 'e':
-                    btnSignoIgual.Focus();
-                    btnSignoIgual.PerformClick();
-                    break;
-
                 case 'E':
-                    btnSignoIgual.Focus();
-                    btnSignoIgual.PerformClick();
+                    btnActions(btnSignoIgual);
                     break;
 
                 case (char)Keys.Back:
-                    btnBorrarUnNumero.Focus();
-                    btnBorrarUnNumero.PerformClick();
+                    btnActions(btnBorrarUnNumero);
                     break;
 
                 case 'b':
-                    btnBorrarNumeros.Focus();
-                    btnBorrarNumeros.PerformClick();
-                    break;
-
                 case 'B':
-                    btnBorrarNumeros.Focus();
-                    btnBorrarNumeros.PerformClick();
+                    btnActions(btnBorrarNumeros);
                     break;
 
                 case 't':
-                    btnBorrarTodo.Focus();
-                    btnBorrarTodo.PerformClick();
-                    break;
-
                 case 'T':
-                    btnBorrarTodo.Focus();
-                    btnBorrarTodo.PerformClick();
+                    btnActions(btnBorrarTodo);
                     break;
 
                 default:
@@ -156,62 +120,52 @@ namespace Calculadora_Heuristicas
 
         private void btnNum0_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "0";
+            setTexts("0");
         }
 
         private void btnNum1_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "1";
+            setTexts("1");
         }
 
         private void btnNum2_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "2";
+            setTexts("2");
         }
 
         private void btnNum3_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "3";
+            setTexts("3");
         }
 
         private void btnNum4_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "4";
+            setTexts("4");
         }
 
         private void btnNum5_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "5";
+            setTexts("5");
         }
 
         private void btnNum6_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "6";
+            setTexts("6");
         }
 
         private void btnNum7_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "7";
+            setTexts("7");
         }
 
         private void btnNum8_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "8";
+            setTexts("8");
         }
 
         private void btnNum9_Click(object sender, EventArgs e)
         {
-            labelError.Text = "";
-            textBoxPantalla.Text += "9";
+            setTexts("9");
         }
 
         private void btnSignoPunto_Click(object sender, EventArgs e)
@@ -332,14 +286,17 @@ namespace Calculadora_Heuristicas
                 {
                     case "+":
                         resultado = operacion.Sumar(input1, input2);
+                        textBoxPantalla.Text = resultado.ToString();
                         break;
 
                     case "-":
                         resultado = operacion.Restar(input1, input2);
+                        textBoxPantalla.Text = resultado.ToString();
                         break;
 
                     case "*":
                         resultado = operacion.Multiplicar(input1, input2);
+                        textBoxPantalla.Text = resultado.ToString();
                         break;
 
                     case "/":
@@ -350,12 +307,12 @@ namespace Calculadora_Heuristicas
                         else
                         {
                             labelError.Text = "No se puede dividir entre 0.";
+                            textBoxPantalla.Text = "Error";
                         }
                         break;
                 }
 
                 textBoxPantallaSecundaria.Text += textBoxPantalla.Text;
-                textBoxPantalla.Text = resultado.ToString();
             }
         }
 
@@ -382,7 +339,6 @@ namespace Calculadora_Heuristicas
                 labelError.Text = "";
                 textBoxPantalla.Clear();
             }
-
         }
 
         private void btnBorrarTodo_Click(object sender, EventArgs e)
@@ -400,5 +356,23 @@ namespace Calculadora_Heuristicas
                 input2 = 0;
             }
         }
+
+
+
+        #region Utils Methods
+
+        private void btnActions(Button btn)
+        {
+            btn.Focus();
+            btn.PerformClick();
+        }
+
+        private void setTexts(string num)
+        {
+            labelError.Text = "";
+            textBoxPantalla.Text += num;
+        }
+
+        #endregion
     }
 }
